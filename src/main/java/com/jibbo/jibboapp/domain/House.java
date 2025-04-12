@@ -23,6 +23,8 @@ public class House {
     private String address;       // 주소
     private String memo;          // 메모
 
+    private String imagePath;    //집 사진(이미지) 저장 경로
+
     @ManyToOne
     @JoinColumn(name = "user_id")  // 외래키
     private User user;

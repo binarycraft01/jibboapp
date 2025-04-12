@@ -7,6 +7,7 @@ import com.jibbo.jibboapp.service.UserService;
 import com.jibbo.jibboapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.jibbo.jibboapp.dto.LoginRequest;
 
 import java.util.List;
 
@@ -40,6 +41,11 @@ public class UserController {
     public UserResponse signup(@RequestBody UserSignupRequest request) {
         User user = userService.signup(request);
         return new UserResponse(user.getId(), user.getEmail(), user.getNickname());
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequest request) {
+        return userService.login(request);
     }
 
 }

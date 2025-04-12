@@ -17,7 +17,7 @@ public class User {
     private String nickname;
 
     // 기본 생성자 (JPA용)
-    protected User() {}
+    public User() {}
 
     // 생성자
     public User(String email, String password, String nickname) {
